@@ -8,19 +8,19 @@ public class kopo44_07 {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		
-		FileWriter fw = new FileWriter("C:\\Users\\User\\Desktop\\kopo44_07.txt", true);
-		BufferedWriter bw = new BufferedWriter(fw);
-		StringBuffer sf = new StringBuffer();
+		FileWriter kopo44_fw = new FileWriter("D:\\kopo44_07.txt", true);
+		BufferedWriter kopo44_bw = new BufferedWriter(kopo44_fw);
+		StringBuffer kopo44_sf = new StringBuffer();
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String str = "";
-		while (!(str=br.readLine()).startsWith("s"))
-			sf.append(str + "\n");
+		BufferedReader kopo44_br = new BufferedReader(new InputStreamReader(System.in));
+		String kopo44_str = "";
+		while (!(kopo44_str=kopo44_br.readLine()).startsWith("s"))
+			kopo44_sf.append(kopo44_str + "\n");
 		
-		br.close();
-		fw.write(sf.toString());
-		fw.flush();
-		fw.close();
+		kopo44_br.close();
+		kopo44_fw.write(kopo44_sf.toString());
+		kopo44_fw.flush();
+		kopo44_fw.close();
 		System.out.println("저장이 완료되었습니다.");
 	}	
 

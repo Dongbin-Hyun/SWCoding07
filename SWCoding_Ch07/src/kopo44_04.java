@@ -1,9 +1,9 @@
 
-public class kopo44_04 {
+public class kopo44_04 {//클래스
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {//메인 메소드
 		// TODO Auto-generated method stub
-		String[] OneRec = {
+		String[] kopo44_OneRec = {//데이터 출력한 값
 				"순번,상호명,소재지(도로명),연락처",
 				"1,샤랄랄라,부산광역시 북구 금곡대로 469 농협하나로클럽 2층 (금곡동),070-7450-8460",
 				"2,꼬마다락방,부산광역시 북구 구포시장길 48 3층 (구포동),051-338-5559",
@@ -15,15 +15,17 @@ public class kopo44_04 {
 				"8,디지털팡팡 화명점,부산광역시 북구 금곡대로 230 금용복합스포츠타운 6층 (화명동),051-365-7272",
 				"9,주니어킹덤,부산광역시 북구 화명대로 17 목양프라자 4층,051-363-2288"	
 		};
-		String[] field_name = OneRec[0].split(",");
-		for (int i = 1; i < OneRec.length - 1; i++) {
-			String[] field = OneRec[i].split(",");
+		String[] kopo44_field_name = kopo44_OneRec[0].split(",");//콤마로 스플릿하고 그 값들을 String[] field_name 에 넣음 
+		for (int kopo44_i = 1; kopo44_i < kopo44_OneRec.length - 1; kopo44_i++) {//헤드부분을 제외하고 시작하기 때문에 i를 1부터 시작
+			String[] kopo44_field = kopo44_OneRec[kopo44_i].split(",");//콤마로 스플릿하고 그 값들을 String[] field에 넣음
 			System.out.printf("**********************************************************************************\n");
-			for (int j = 0; j < field_name.length; j++) {
+			//출력양식
+			for (int j = 0; j < kopo44_field_name.length; j++) {//콘솔에 나타내기 위한 for 반복문
 				
-				System.out.printf(" %s : %s\n", field_name[j], field[j]);
+				System.out.printf(" %s : %s\n", kopo44_field_name[j], kopo44_field[j]);//출력양식
 			}
 			System.out.printf("**********************************************************************************\n");
+			//출력양식
 		}
 	}
 

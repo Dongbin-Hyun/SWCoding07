@@ -3,40 +3,78 @@ public class kopo44_05 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String[] OneRec = {
-				"연번,업종,업체명,주 소,전화번호",
-				"1,기타유원시설업,레스트(REST) 키즈까페,인천광역시 계양구 계산새로87번길 6 3층 303호 (용종동 레드몰),070-7783-7979",
-				"2,기타유원시설업,삼촌네 키즈방방,인천광역시 계양구 황어로 129 2층 (장기동 경신빌딩),032-549-3777",
-				"3,기타유원시설업,계양코코몽어드벤처,인천광역시 계양구 봉오대로 855 (서운동 계양체육관),032-556-1999",
-				"4,기타유원시설업,유앤아이방방,인천광역시 계양구 장제로997번길 5 2층 201호 (박촌동),032-553-0557",
-				"5,기타유원시설업,상상노리,인천광역시 계양구 계양대로 27 3층 (작전동, HOMEPLUS작전점),032-541-8012",
-				"6,기타유원시설업,상상노리 계산점,인천광역시 계양구 오조산공원로 14 4층 (계산동, 홈플러스계산점),032-553-0970",
-				"7,기타유원시설업,원더4D존,인천광역시 계양구 계양대로 27 HOME PLUS 작전점 3층 (작전동),000-000-0000",
-				"8,기타유원시설업,점핑파크 계양점,인천광역시 계양구 용종로 78 초정마을하나아파트 지하층 01호 (용종동),000-000-0000",
-				"9,기타유원시설업,맥스라이더,인천광역시 계양구 오조산공원로 14 홈플러스계산점 3층 (계산동),000-000-0000",
-				"10,기타유원시설업,하늘방방,인천광역시 계양구 동양로 111 당미그린상가 (동양동),000-000-0000",
-				"11,기타유원시설업,점핑플레이존,인천광역시 계양구 병방로 13 지하 1층 (병방동),032-554-8884",
-				"12,기타유원시설업,헬로키즈놀이터,인천광역시 계양구 주부토로472번길 57 금보상가 2층 201호 (작전동),000-000-0000",
-				"13,기타유원시설업,뛰자놀자,인천광역시 계양구 장제로 919 2층 (병방동),000-000-0000",
-				"14,기타유원시설업,플레이타임 계양점,인천광역시 계양구 장제로 822 롯데마트 계양점 4층 (계산동),000-000-0000",
-				"15,기타유원시설업,뛰뛰방방,인천광역시 계양구 오조산로 3 한미리빌딩 4층 (작전동),000-000-0000"
+		String[] kopo44_OneRec = {
+				"지원대상,지원대상 기준 ,지원그룹,지원금액(원),우선순위",
+				"기초생활(생계),국민기초생활보장법에 정한 수급자(생계),생계급여,10000,1",
+				"기초생활(의료),국민기초생활보장법에 정한 수급자(의료),의료급여,10000,1",
+				"기초생활(교육),국민기초생활보장법에 정한 수급자(교육),교육급여,5000,1",
+				"기초생활(주거),국민기초생활보장법에 정한 수급자(주거),주거급여,5000,1",
+				"차상위(계층확인),차상위계층확인(구 차상위 우선돌봄) ,우선돌봄,5000,2",
+				"차상위(자활사업참여),자활사업참여자,차상위자활사업참여자,5000,2",
+				"차상위(장애수당),차상위장애수당자 ,차상위장애인,5000,2",
+				"차상위(한부모가족),한부모가족지원가정 ,한부모가족,5000,2",
+				"차상위(본인부담경감대상),본인부담경감대상자 ,차상위본인부담경감대상자,5000,2",
+				"장애인(중증),장애인복지법에 의한 장애의 정도가 심한 장애인 ,장애인,5000,3",
+				"국가유공자(1~3급),국가유공자 등 예우 및 지원에 관한 볍률에 의한 1~3급 상이자,일반,5000,3",
+				"5.18유공자(1~3급),5.18 민주유공자 예우에 관한 법률에 의한 1~3급 상이자 ,일반,5000,3",
+				"독립유공자(유족포함),독립유공자 예우에 관한 법률에 의한 독립유공자 또는 독립유공자의 권리를 이전받은 유족 1인 ,일반,5000,3",
+				"3자녀가구이상,세대주와의 관계가 자(子)3명 또는 손(孫)3명 이상인 가구(주민등록등본기준 위탁아동 포함) ,일반,4000,4"
 
 		};
-	
-		String[] field_name = OneRec[0].split(",");
-		for (int i = 1; i < OneRec.length - 1; i++) {
-			String[] field = OneRec[i].split(",");
-			
+		int kopo44_numberV;
+		String[] kopo44_field_name = kopo44_OneRec[0].split(",");
+		for (int kopo44_i = 1; kopo44_i < kopo44_OneRec.length - 1; kopo44_i++) {
+
+			String[] kopo44_field = kopo44_OneRec[kopo44_i].split(",");
+			kopo44_numberV = Integer.parseInt(kopo44_field[4]);
+
+			String kopo44_strNum = String.valueOf(kopo44_numberV);
+			String kopo44_korReadNum = "";
+
+
+
+			String [] kopo44_numHead = {"영", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구"};
+			String [] kopo44_numTail = {"", "십", "백", "천", "만", "십", "백", "천", "억", "십"};
+
+			int kopo44_numA = 0;
+			int kopo44_numB = kopo44_strNum.length() -1;
+
+			while (true) {//while 반복문의 조건을 i >=0으로 설정하여 i가 0과 같거나 크다면 반복문이 수행되도록 한다.
+				if(kopo44_numA >= kopo44_strNum.length()) break;// 만약 i가 sNumVal의 길이와 같거나 크다면 break문을 수행한다.
+
+				if(kopo44_strNum.substring(kopo44_numA, kopo44_numA + 1).equals("0")) {//만약 sNumVal의 i부터, i에 1을 더한 값까지 문자열을 자른 값이 0과 같다면
+					if(kopo44_numTail[kopo44_numB].equals("만") || kopo44_numTail[kopo44_numB].equals("억")) {//만약 unitX의 [j]인덱스 값이 만이거나 unitX의 [j]인덱스 값이 억이면
+						kopo44_korReadNum = kopo44_korReadNum + kopo44_numTail[kopo44_numB];//sNumVoice값에 unitX[j]인덱스 값을 저장한다. (sNumVoice += unitX[j]로 바꿔서 작성할 수 있다)
+					} else {//만약 if조건을 만족하지 않는다면
+						//아무것도 하지않는다.
+					}
+				} else if (kopo44_strNum.substring(kopo44_numA, kopo44_numA + 1).equals("1") && kopo44_numB > 5) {//추가한 부분으로 //만약 sNumVal의 i부터, i에 1을 더한 값까지 문자열을 자른 값이 1과 같거나
+					kopo44_korReadNum = kopo44_korReadNum + kopo44_numTail[kopo44_numB];// j가 5보다 크다면 sNumVoice값에 unitX[j]인덱스 값을 저장한다. 
+					//(sNumVoice += unitX[j]로 바꿔서 작성할 수 있다)
+
+				} else {//만약 sNumVal의 i부터, i에 1을 더한 값까지 문자열을 자른 값이 0과 같지 않다면
+					kopo44_korReadNum = kopo44_korReadNum//sNumVoice의 값에 
+							+ kopo44_numHead[Integer.parseInt(kopo44_strNum.substring(kopo44_numA, kopo44_numA + 1))]
+									//units의 숫자형으로 형변환한 (sNumVal의 i부터, i에 1을 더한 값까지 문자열을 자른 값)의 인덱스]의 값을 더하고
+									+ kopo44_numTail[kopo44_numB];//unitX[j]의 값을 더한다.
+				}
+				kopo44_numA++;//i의 값을 1 증가시킨다.
+				kopo44_numB--;//j의 값을 1 감소시킨다.
+			}
+
+
 			System.out.printf("*********************************************************\n");
-			for (int j = 0; j < field_name.length; j++) {
-				
-				System.out.printf(" %s : %s\n", field_name[j], field[j]);
+
+			for (int kopo44_j = 0; kopo44_j < kopo44_field_name.length; kopo44_j++) {
+				if (kopo44_j == 4) {
+					System.out.printf(" %s : %s (%s)\n", kopo44_field_name[kopo44_j], kopo44_field[kopo44_j], kopo44_korReadNum);
+				} else {
+					System.out.printf(" %s : %s\n", kopo44_field_name[kopo44_j], kopo44_field[kopo44_j]);
+				}
 			}
 			System.out.printf("*********************************************************\n");
-		}
-		
-		
 
+		}
 	}
 
 }
